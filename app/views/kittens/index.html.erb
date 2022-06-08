@@ -1,0 +1,28 @@
+<div class='columns is-multiline px-5 pt-5'>  
+  <% @kittens.each do |k| %>
+  <div class='column is-one-fifth'>
+    <div class='card'>
+      <div class='card-header'>
+        <p class='card-header-title'><%= k.name %></p>
+      </div>
+      <div class='card-content'>
+        <table class='table is-fullwidth'>
+            <tr>
+              <td><b>age</b></td><td><%= k.age %></td>
+            </tr>
+            <tr>  
+              <td><b>cuteness</b></td><td><%= k.cuteness %>/7</td>
+            </tr>
+            <tr>
+              <td><b>softness</b></td><td><%= k.softness %>/7</td>
+            </tr>
+          </table>
+        <footer class='card-footer'>
+          <%= link_to 'see', kitten_path(k), class: 'card-footer-item button' %>
+          <%= link_to 'edit', edit_kitten_path(k), class: 'card-footer-item button' %>
+        </footer>
+      </div>  
+    </div>
+  </div>  
+  <% end %>
+</div>  

@@ -11,6 +11,29 @@
   </head>
 
   <body>
+    <% if flash[:notice]%>
+      <div class='notification is-info global-notification'>
+        <p class='notice'><%= notice%></p>
+      </div> 
+    <% end %>
+    <% if flash[:alert]%>
+      <div class='notification is-danger global-notification'>
+        <p class='alert'><%= alert%></p>
+      </div>
+    <% end %>
+    <section class='hero is-primary'>
+      <div class='hero-body'>
+        <p class='title'>Kittens</p>
+        <p class='subtitle'><%= link_to 'wonderful kittens', root_path %></p>
+      </div>
+      <div class='hero-foot'>
+        <nav class='tabs is-boxed'>
+          <div class='container'>
+            <%= link_to 'new kitten', new_kitten_path %>
+          </div>
+        </nav>
+      </div>
+    </section>
     <%= yield %>
   </body>
 </html>
